@@ -136,7 +136,14 @@ switch($types)   // 根据请求的 Api，执行相应操作
         
         echojson($data);
         break;
-     
+    case 'commits';
+        $id = getParam('id');
+        
+        $url = '';
+        
+        $data = file_get_contents($url);
+        echojson($data);
+        break;
     case 'search':  // 搜索歌曲
         $s = getParam('name');  // 歌名
         $limit = getParam('count', 20);  // 每页显示数量
